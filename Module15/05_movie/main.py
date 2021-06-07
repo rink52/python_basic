@@ -30,11 +30,8 @@ while True:
                 a = True
                 break
         else:
-            if a == True:
+            if a is True:
                 break
-            else:
-                a = False
-                continue
     else:
         print(f'К сожалению фильма с названием "{favorite_film}" не найдено')
 
