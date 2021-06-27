@@ -1,4 +1,4 @@
-players = int(input('Кол-во человек: '))
+count_players = int(input('Кол-во человек: '))
 number_kick = int(input('Какое число в считалке? '))
 print(f'Значит, выбывает каждый {number_kick} человек')
 players = list(range(1, count_players+1))
