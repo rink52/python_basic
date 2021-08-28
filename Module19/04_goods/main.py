@@ -24,4 +24,15 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+for i in store:                                                                             # идем по ключам store
+    len_dict = 0
+    quantity = 0
+    full_price = 0
+    for n in store[i]:                                                                      # идем по спискам каждого товара
+        quantity += n.get('quantity')                                                       # считаем количество через получение значения по ключу
+        full_price += n.get('price') * n.get('quantity')                                    # считаем сумму через произведение значений цены и количества по ключу
+        if len(store[i]) - 1 > len_dict:                                                    # проверяем количество значений в списке если не одно то включаем счетчик
+            len_dict += 1
+        else:
+            goods_text = list(goods.keys())[list(goods.values()).index(i)]                  # считываем название товара
+            print(" {} - {} шт, стоимость {}".format(goods_text, quantity, full_price))     # выводим результат
