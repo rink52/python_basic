@@ -10,15 +10,10 @@ for i in range(1, N+1):
     if base[i][0] not in base_client:
         base_client[base[i][0]] = {base[i][1]: base[i][2]}
     else:
-        for name, base_order in base_client.items():
-            if name == base[i][0]:
-                for pizza, count in base_order.items():
-                    if pizza == base[i][1]:
-                        base_client[base[i][0]][base[i][1]] += base[i][2]
-                        break
-                    else:
-                        base_client[base[i][0]][base[i][1]] = base[i][2]
-                        break
+        if base[i][1] in base_client[base[i][0]]:
+            base_client[base[i][0]][base[i][1]] += base[i][2]
+        else:
+            base_client[base[i][0]][base[i][1]] = base[i][2]
 
 
 for names, pizzas in sorted(base_client.items()):
